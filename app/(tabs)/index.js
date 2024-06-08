@@ -6,35 +6,6 @@ import { ThemedText } from '../../components/ThemedText';
 import { ThemedView } from '../../components/ThemedView';
 import logo from '../../assets/images/partial-react-logo.png';
 
-export default function HomeScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={logo}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome! to </ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Smarthome app</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
-  );
-}
-
 const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
@@ -53,3 +24,29 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
 });
+
+export default function HomeScreen() {
+  return (
+    <ParallaxScrollView
+      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerImage={<Image source={logo} style={styles.reactLogo} />}
+    >
+      <ThemedView style={styles.titleContainer}>
+        <ThemedText type="title">Welcome! to </ThemedText>
+        <HelloWave />
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Smarthome app</ThemedText>
+        <ThemedText>
+          Edit{' '}
+          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText>{' '}
+          to see changes. Press{' '}
+          <ThemedText type="defaultSemiBold">
+            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
+          </ThemedText>{' '}
+          to open developer tools.
+        </ThemedText>
+      </ThemedView>
+    </ParallaxScrollView>
+  );
+}

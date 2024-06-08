@@ -55,7 +55,7 @@ fs.rename(oldDirPath, newDirPath, (error) => {
     console.log('New /app directory created.');
 
     const indexPath = path.join(newAppDirPath, 'index.tsx');
-    fs.writeFile(indexPath, indexContent, (error) => {
+    fs.writeFile(indexPath, indexContent, (er) => {
       if (error) {
         return console.error(`Error creating index.tsx: ${error}`);
       }
