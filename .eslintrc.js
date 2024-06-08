@@ -1,0 +1,62 @@
+module.exports = {
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+  },
+  parser: 'babel-eslint',
+  plugins: ['prettier', 'react'],
+  extends: [
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:react/recommended',
+    'airbnb-base',
+    'expo',
+  ],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+      modules: true,
+    },
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
+  rules: {
+    indent: 'off',
+    'no-tabs': 'off',
+    'no-underscore-dangle': 'off',
+    'space-before-function-paren': 'off',
+    'quote-props': 'off',
+    'comma-dangle': 'off',
+    'operator-linebreak': 'off',
+    'react/jsx-wrap-multilines': 'off',
+    'react/forbid-prop-types': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
+    'jsx-a11y/label-has-for': 'off',
+    'class-methods-use-this': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'import/extensions': 'off',
+    'arrow-parens': 'off',
+    'object-curly-newline': 'off',
+    'react/no-children-prop': 'off',
+    'function-paren-newline': 'off',
+    'implicit-arrow-linebreak': 'off',
+    'import/prefer-default-export': 'off',
+    'no-confusing-arrow': 'off',
+    'react/prop-types': 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        trailingComma: 'all',
+        bracketSpacing: true,
+        jsxBracketSameLine: false,
+      },
+    ],
+  },
+};
